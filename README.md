@@ -9,3 +9,8 @@ imageFiltering
 действия фильтра на картинке ниже:
 
 https://api.monosnap.com/image/download?id=bmF9nKQwiXtf1nse9R7LBgMOlbNOYD
+
+
+Комментарий автора -
+В фотошопе методом тыка подобрал цепочку фильтров - Postirize + Contrast.
+В методе updateImage можно добавить еще фильтрацию.
