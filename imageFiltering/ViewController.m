@@ -20,16 +20,6 @@
     UIImageOrientation orientation;
 }
 
--(void)logAllFilters {
-    NSArray *properties = [CIFilter filterNamesInCategory:
-                           kCICategoryBuiltIn];
-    NSLog(@"%@", properties);
-    for (NSString *filterName in properties) {
-        CIFilter *fltr = [CIFilter filterWithName:filterName];
-        NSLog(@"%@", [fltr attributes]);
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,7 +31,6 @@
     context = [CIContext contextWithOptions:nil];
 
     [self updateImage];
-    [self logAllFilters];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,10 +40,13 @@
 
 - (void)updateImage {
     // Place My Filters here!
+    CIFilter *posterize = [CIFilter filterWithName:@"CIColorPosterize"];
+    [posterize setValue:beginImage forKey:kCIInputImageKey];
+    [posterize setValue:@(15) forKey:@"inputLevels"];
+  
     CIFilter *colorControls = [CIFilter filterWithName:@"CIColorControls"];
-    [colorControls setValue:beginImage forKey:kCIInputImageKey];
-    [colorControls setValue:@(0.5f) forKey:@"inputBrightness"];
-    [colorControls setValue:@(0.5f) forKey:@"inputContrast"];
+    [colorControls setValue:posterize.outputImage forKey:kCIInputImageKey];
+    [colorControls setValue:@(1.0f) forKey:@"inputContrast"];
     
     CIImage *outputImage = colorControls.outputImage;
     CGImageRef cgimg = [context createCGImage:outputImage
@@ -82,7 +74,9 @@
     [library writeImageToSavedPhotosAlbum:cgImg
                                  metadata:[saveToSave properties]
                           completionBlock:^(NSURL *assetURL, NSError *error) {
-                              
+                              if (!error) {
+                                  NSLog(@"Success!");
+                              }
                               CGImageRelease(cgImg);
                           }];
 }
