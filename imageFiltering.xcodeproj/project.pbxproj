@@ -23,6 +23,7 @@
 		8FB5BC6419AB1260008507DF /* imageFilteringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5BC6319AB1260008507DF /* imageFilteringTests.m */; };
 		8FB5BC6E19AB12BA008507DF /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB5BC6D19AB12BA008507DF /* CoreImage.framework */; };
 		8FB5BC7019AB1CA9008507DF /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB5BC6F19AB1CA9008507DF /* image.png */; };
+		8FB5BC7219AB2831008507DF /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FB5BC7119AB2831008507DF /* AssetsLibrary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8FB5BC6319AB1260008507DF /* imageFilteringTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = imageFilteringTests.m; sourceTree = "<group>"; };
 		8FB5BC6D19AB12BA008507DF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		8FB5BC6F19AB1CA9008507DF /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		8FB5BC7119AB2831008507DF /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB5BC7219AB2831008507DF /* AssetsLibrary.framework in Frameworks */,
 				8FB5BC6E19AB12BA008507DF /* CoreImage.framework in Frameworks */,
 				8FB5BC3B19AB1260008507DF /* CoreGraphics.framework in Frameworks */,
 				8FB5BC3D19AB1260008507DF /* UIKit.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		8FB5BC3719AB1260008507DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FB5BC7119AB2831008507DF /* AssetsLibrary.framework */,
 				8FB5BC6D19AB12BA008507DF /* CoreImage.framework */,
 				8FB5BC3819AB1260008507DF /* Foundation.framework */,
 				8FB5BC3A19AB1260008507DF /* CoreGraphics.framework */,

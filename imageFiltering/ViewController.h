@@ -10,10 +10,8 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
-- (IBAction)sliderValueChanged:(id)sender;
 - (IBAction)loadImage:(id)sender;
 - (IBAction)saveImage:(id)sender;
 @end
