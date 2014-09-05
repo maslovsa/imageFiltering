@@ -29,7 +29,8 @@
     
     beginImage = [CIImage imageWithContentsOfURL:fileNameAndPath];
     context = [CIContext contextWithOptions:nil];
-
+    filter = [CIFilter filterWithName:@"CISepiaTone"];
+    
     [self updateImage];
 }
 
@@ -47,6 +48,8 @@
     CIFilter *colorControls = [CIFilter filterWithName:@"CIColorControls"];
     [colorControls setValue:posterize.outputImage forKey:kCIInputImageKey];
     [colorControls setValue:@(1.0f) forKey:@"inputContrast"];
+    
+    [filter setValue:colorControls.outputImage forKey:kCIInputImageKey];
     
     CIImage *outputImage = colorControls.outputImage;
     CGImageRef cgimg = [context createCGImage:outputImage
@@ -86,7 +89,7 @@
     UIImage *gotImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     beginImage = [CIImage imageWithCGImage:gotImage.CGImage];
     orientation = gotImage.imageOrientation;
-    [filter setValue:beginImage forKey:kCIInputImageKey];
+    //[filter setValue:beginImage forKey:kCIInputImageKey];
     [self updateImage];
 }
 
